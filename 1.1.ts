@@ -1,5 +1,5 @@
-//___№ 1___________________________________________________________________ 
-const actor: {
+//№1 создал интерфес для создания новых актеров. Поменял тип у age для корректного отображения howOldWillBeActorAfterTwentyYears
+interface actor {
     name: string;
     firstName: string;
     country: string;
@@ -8,7 +8,8 @@ const actor: {
     filmsCount: number;
     age: number;
     languages: string[];
-  } = {
+} 
+const actorEl:actor = {
       name: 'Michael',
       firstName: 'Ivanov',
       country: 'Russia',
@@ -16,18 +17,15 @@ const actor: {
       hasOskar: false,
       filmsCount: 10,
       age: 14,
-      //у поля age должен быть тип number. Такая строгая типизация позволит избежать ошибки во время вычисления howOldWillBeActorAfterTwentyYears
       languages: ['RU-ru', 'EN-us', 'TR-tr'],
-  };
-  const howOldWillBeActorAfterTwentyYears = (actor) => {
-      return actor.age + 20;
-  }
-  console.log(howOldWillBeActorAfterTwentyYears(actor)); //? 
+};
+const howOldWillBeActorAfterTwentyYears = (actorEl:actor) => {
+    return actorEl.age + 20;
+}
+console.log(howOldWillBeActorAfterTwentyYears(actorEl)); //? 
   
   
   
-  //___№ 2___________________________________________________________________
-  document.addEventListener('click', (e) => {
-    const coords:number[]= [e.x, e.y];
-    console.log(`Point is ${coords[0]}, ${coords[1]}`);
-});
+
+
+
